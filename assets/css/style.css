@@ -1,0 +1,276 @@
+/* GLOBAL STYLINGS */
+body {
+    background-color: rgb(12, 16, 21);
+}
+
+h1 {
+    color: white;
+    font-size: 5rem;
+    font-weight: bolder;
+    padding-top: 150px;
+    text-shadow: 0 0 3px black, 0 0 30px rgb(82, 177, 240);
+    vertical-align: bottom;
+}
+
+h2 {
+    color: white;
+}
+
+h3 {
+    color: white;
+}
+
+h4 {
+    color: white;
+    font-weight: bolder;
+    text-shadow: 0 0 3px black, 0 0 30px rgb(82, 177, 240);
+    margin-right: 12%;
+}
+
+h5 {
+    color: white;
+}
+
+h6 {
+    color: white;
+    text-align: center;
+    
+}
+
+p {
+    color: white;
+
+}
+
+/* INDEX_1.HTML - styling specific to index_1.html*/
+
+#about {
+    color: whitesmoke;
+    background-color: rgb(41, 55, 69);
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
+    padding: 10px;
+    text-align: center;
+}
+
+#get-started:hover {
+    background: #023269;
+    border: 1px solid rgb(118, 151, 248);
+    color: white;
+    cursor: pointer;
+}
+
+#get-started {
+    background-color: gray;
+    border-radius: 5px;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 40%;
+    margin-right: 40%;
+    width: 20%;
+}
+
+.jumbotron {
+    background-image: url(../images/seattleMorning.jpg);
+    background-size: cover;
+    background-position: 0 30%;
+    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
+    font-family: 'Righteous', cursive;
+    height: 25%;
+    margin-top: 20px;
+}
+
+/* CREATE.HTML - styling specific create.html*/
+
+#input-info {
+    color: whitesmoke;
+    text-align: center;
+    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
+    width: 60%;
+    padding: 12px 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.jumbotron2 {
+    background-image: url(../images/seattleMorning2.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 0 40%;
+    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
+    font-family: 'Righteous', cursive;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-right: 20px;
+    text-align: right;
+}
+
+#submit:hover {
+    background: #023269;
+    border: 1px solid rgb(118, 151, 248);
+    color: white;
+    cursor: pointer;
+}
+
+#submit {
+    background-color: gray;
+    border-radius: 5px;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 40%;
+    margin-right: 40%;
+    width: 20%;
+}
+
+/* CALCULATE.HTML */
+
+#add-task:hover {
+    background: #023269;
+    border: 1px solid rgb(118, 151, 248);
+    color: white;
+    cursor: pointer;
+}
+
+#add-task {
+    background-color: gray;
+    border-radius: 5px;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 40%;
+    margin-right: 40%;
+    width: 20%;
+}
+
+#calculate:hover {
+    background: #023269;
+    border: 1px solid rgb(118, 151, 248);
+    color: white;
+    cursor: pointer;
+}
+
+#calculate {
+    background-color: gray;
+    border-radius: 5px;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 40%;
+    margin-right: 40%;
+    width: 20%;
+}
+
+/* Style The Dropdown Button */
+.dropbtn {
+    background-color: orange;
+    border-radius: 10px;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:#f2b315; 
+    border-radius: 10px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: orange;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    background-color: orange;
+  }
+
+
+
+.jumbotron3 {
+    background-image: url(../images/seattleMorning3.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 0 40%;
+    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
+    font-family: 'Righteous', cursive;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-right: 20px;
+    text-align: right;
+}
+
+#radio{
+    color: white;
+}
+
+#results-panel {
+    color: white;
+    border: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
+    padding: 12px 20px;
+    text-align: center;
+
+}
+
+#weather-results {
+    border: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
+    border-radius: 10px;
+    padding: 12px 20px;
+    text-align: left;
+}
+
+#where-when {
+    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
+    border-radius: 10px;
+    color: whitesmoke;
+    margin: 0 auto;
+    padding: 12px 20px;
+    width: 100%;
+}
