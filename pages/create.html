@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA Compatible" content="ie-edge">
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <title>Rise & Shine: Where & When</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron2">
+            <h1>Rise & Shine:</h1>
+            <h4>Where & When</h4>
+
+        </div>
+        <div class="containter" id="input-info">
+            <p>
+                <h6>Origin Address:</h6>
+                <input type="text" class="form-control" id="origin-input" placeholder="Where you at?">
+                <br>
+                <h6>Destination Address:</h6>
+                <input type="text" class="form-control" id="destination-input" placeholder="Where you going?">
+                <br>
+                <h6>Time of Departure:</h6>
+                <input type="time" class="form-control" id="departure-input" placeholder="When you want to leave?">
+                <br>
+                <h6>Mode of Transport:</h6>
+                <!-- <select>
+                    <option value="driving">Driving</option>
+                    <option value="walking">Walking</option>
+                    <option value="transit">Transit</option>
+                </select> -->
+
+                <div class="dropdown">
+                        <button class="dropbtn">Choose One</button>
+                        <div class="dropdown-content">
+                          <a href="#">Walking</a>
+                          <a href="#">Transit</a>
+                          <a href="#">Driving</a>
+                        </div>
+                      </div>
+
+                <br><br>
+                <h6>Desired Arrival Time:</h6>
+                <input type="time" class="form-control" id="arrival-input" placeholder="When you want to be there?">
+                <br>
+                <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+            </p>
+        </div>
+
+    </div>
+
+    <script src="../assets/javascript/app.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc1vjFKMeHn1ZPLk6eetWaFFKg2LQWgHk&callback=setupDirections&libraries=places"></script>
+
+</body>
+
+</html>
