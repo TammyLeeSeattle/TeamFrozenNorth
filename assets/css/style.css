@@ -1,6 +1,7 @@
 /* GLOBAL STYLINGS */
 body {
     background-color: rgb(12, 16, 21);
+    background-image: url(../images/backgroundimage.jpg)
 }
 
 h1 {
@@ -46,7 +47,7 @@ p {
 
 #about {
     color: whitesmoke;
-    background-color: rgb(41, 55, 69);
+    background-color: rgb(41, 55, 69, 0.5);
     border: 1px solid whitesmoke;
     border-radius: 10px;
     box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
@@ -90,6 +91,7 @@ p {
 #input-info {
     color: whitesmoke;
     text-align: center;
+    background-color: rgb(41, 55, 69, 0.5);
     border-top: 2px solid whitesmoke;
     border-bottom: 2px solid whitesmoke;
     border-radius: 10px;
@@ -246,6 +248,7 @@ p {
 
 #results-panel {
     color: white;
+    background-color: rgb(41, 55, 69, 0.5);
     border: 2px solid whitesmoke;
     border-bottom: 2px solid whitesmoke;
     border-radius: 10px;
@@ -256,6 +259,7 @@ p {
 }
 
 #weather-results {
+    background-color: rgb(41, 55, 69, 0.5);
     border: 2px solid whitesmoke;
     border-bottom: 2px solid whitesmoke;
     box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
@@ -265,6 +269,7 @@ p {
 }
 
 #where-when {
+    background-color: rgb(41, 55, 69, 0.5);
     border-top: 2px solid whitesmoke;
     border-bottom: 2px solid whitesmoke;
     box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
