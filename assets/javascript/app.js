@@ -22,8 +22,7 @@ $(document).ready(function() {
     
   //set up ability to pick time from a list of options
   $("#departure-input").timepicker(); 
-  
-    
+
   
   
   var input = document.getElementById('origin');
@@ -82,8 +81,8 @@ $("#submit").on("click", function(){
           } else {
             var originList = response.originAddresses;
             var destinationList = response.destinationAddresses;
-            outputDivTraffic = document.getElementById('results-traffic');
-            outputDiv = document.getElementById('results');            
+            var outputDivTraffic = "";
+            var outputDiv = "";            
 
           
         
@@ -94,29 +93,32 @@ $("#submit").on("click", function(){
             getWeather(zipcode[0]);
            
 
-            outputDiv.innerHTML = '';
-            outputDivTraffic.innerHTML = '';
-
             for (var i = 0; i < originList.length; i++) {
               var results = response.rows[i].elements;
               for (var j = 0; j < results.length; j++) {
                 
-                outputDiv.innerHTML += originList[i] + ' to ' + destinationList[j] +
-                    ': ' + results[j].distance.text + ' in ' +
-                    results[j].duration.text + '<br>';
-                
-                outputDivTraffic.innerHTML += originList[i] + ' to ' + destinationList[j] +
-                    ': ' + results[j].distance.text + ' in ' +
-                    results[j].duration_in_traffic.text + '<br>';
+                outputDiv += results[j].duration.text;
+                outputDivTraffic += results[j].duration_in_traffic.text;
                 
                  
               }
             }
-            }
-        });
+
+            localStorage.setItem('results-traffic', outputDivTraffic);
+            localStorage.setItem('results', outputDiv);
+            location.href="calculate.html";
+            // redirect to calculate page
+
+        }
+      });
       // }
         }
   
+        function mapsResults(){ 
+          $('#results-traffic').text(localStorage.getItem('results-traffic'));
+          
+          $('#results').text(localStorage.getItem("results"));
+          }
 
 
 
