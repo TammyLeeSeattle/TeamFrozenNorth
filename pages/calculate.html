@@ -61,38 +61,29 @@
                 <input type="number" class="form-control" id="how-much" placeholder="How Much More Time in Minutes">
             </div>
             <br>
-            <h5>Here are some common tasks that people do in the morning. Click the task to set aside time for that
-                task.</h5>
-            <div class="container" id="default-tasks">
-                <br>
-                <h6><em>This is where the default task buttons will appear.</em></h6>
-                <br><br>
-                <div id="your-tasks">
-                    <h5>If you'd like to add your own task, input that information here:</h5>
-                    <input type="text" class="form-control" id="task-input" placeholder="Add a task button">
-                    <br>
-                    <button type="submit" class="btn btn-primary" id="add-task">Add Button</button>
-                </div>
+            <h5>Have stuff to do before you need to leave? Let's make a list of those activities and figure out
+                how long each will take you!</h5>
+            <input type="text" class="form-control" id="task-name" placeholder="Activity">
+            <input type="number" class="form-control" id="taskDuration" placeholder="Duration of Activity (in minutes)">
+                    <button type="submit" class="btn btn-primary" id="addTask">Add Activity</button>
+                <div class="alertList" id="default-tasks"></div>
             </div>
             <hr id="divider">
             <button type="submit" class="btn btn-primary" id="calculate">Calculate</button>
         </div>
         <br>
-        <!-- <button type="submit" class="btn btn-primary" id="calculate">Calculate</button> -->
-
         <div class="container" id="departure-time">
             <h2 id="must-leave-by"> You have to leave the house by: <span id="final-departure"></span></h2>
             <div>
             </div>
-            <script src="../assets/javascript/app.js"></script>
-            <script src="../assets/javascript/destination-info.js"></script>
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    mapsResults();
-                });
-            </script>
-
-
+    <script src="../assets/javascript/app.js"></script>
+    <script src="../assets/javascript/destination-info.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+                mapsResults();
+        });
+    </script>
+    
 </body>
 
 </html>
