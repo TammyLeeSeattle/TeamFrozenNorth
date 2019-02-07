@@ -10,13 +10,24 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">    
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+
+    <!--Time and number Picker Library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>      
+   
+    
+    
+
+
     <title>Rise & Shine: Where & When</title>
 </head>
 
@@ -36,30 +47,17 @@
                 <h6>Destination Address:</h6>
                 <input type="text" class="form-control" id="destination-input" placeholder="Where you going?">
                 <br>
-                <h6>Time of Departure:</h6>
-                <input type="time" class="form-control" id="departure-input" placeholder="When you want to leave?">
-                <br>
-                <h6>Mode of Transport:</h6>
-                <!-- <select>
-                    <option value="driving">Driving</option>
-                    <option value="walking">Walking</option>
-                    <option value="transit">Transit</option>
-                </select> -->
-
-                <div class="dropdown">
-                        <button class="dropbtn">Choose One</button>
-                        <div class="dropdown-content">
-                          <a href="#">Walking</a>
-                          <a href="#">Transit</a>
-                          <a href="#">Driving</a>
-                        </div>
-                      </div>
-
                 <br><br>
-                <h6>Desired Arrival Time:</h6>
-                <input type="time" class="form-control" id="arrival-input" placeholder="When you want to be there?">
+                <h6>Desired Departure Time:</h6>
+                <input type="text" class="form-control" id="departure-input" placeholder="When you want to leave?">
                 <br>
-                <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                            
+
+
+
+
+               
+                <a href ="calculate.html" button type="submit" class="btn btn-primary" id="submit">Submit</a>
             </p>
         </div>
 
