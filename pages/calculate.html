@@ -32,7 +32,7 @@
         </div>
 
         <div class="container" id="where-when">
-            <h5 id="designated-destination">Destination:</h5>
+            <h5>Destination: <span id="designated-destination"></span></h5>
             <em>This is where the users input regarding destination and arrival time from page 2 will appear</em>
             <h5 id="weather-response">Desired Arrival Time:</h5>
         </div>
@@ -43,12 +43,13 @@
                 <label for="yes_no_radio">
                     <p>Will your commute require more time due to weather?</p>
                 </label>
-                <p>
-                    <input type="radio" name="yes_no" checked>Yes</input>
-                </p>
-                <p>
-                    <input type="radio" name="yes_no">No</input>
-                </p>
+                <br>
+                <label class="radio-inline">
+                    <input type="radio" name="yes_no" checked>Yes
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="yes-no">No
+                  </label>
             </div>
             <div id="more-time">
                 <input type="number" class="form-control" id="how-much" placeholder="How Much More Time in Minutes">
