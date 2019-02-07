@@ -18,9 +18,20 @@ var outputDivTraffic;
   firebase.initializeApp(config);
 
   // call weather function
-  function getWeather(zipcode) {
+  function getWeather(zipcode, callback) {
     // Make Ajax calls and update page
     console.log("Making ajax call with " + zipcode);
+    var zipQueryUrl = "https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/forecast?zip=" + zipcode + ",us&appid=a0860c281528ff7d7dd56080be3e0004";
+    $.ajax({                
+        url: zipQueryUrl,
+        method: "GET",
+        dataType: 'json',
+        success: function(response){
+            console.log(response); 
+            localStorage.setItem('weather-description', response.list[0].weather[0].description);
+            callback();
+        }
+    });
   }
 
 
@@ -95,37 +106,45 @@ function getDistances(origin1, destinationA, cb) {
       var addressArr = destinationList.toString().split(',');
       // Julie, you can call your weather function using the zipcode[0].
       zipcode = addressArr[2].match(/\d+/);
-      getWeather(zipcode[0]);
-
-
+      getWeather(zipcode[0], function () {
       for (var i = 0; i < originList.length; i++) {
         var results = response.rows[i].elements;
         for (var j = 0; j < results.length; j++) {
-
           outputDiv += results[j].duration.text;
           outputDivTraffic += results[j].duration_in_traffic.text;
-
-
-
         }
       }
-
       localStorage.setItem('results-traffic', outputDivTraffic);
       localStorage.setItem('results', outputDiv);
       location.href = "calculate.html";
-      // redirect to calculate page
-
+    });
     }
   });
-  // }
 }
+
+// Weather API Julie
+// ---------------------------------------------------------------
+
 
 function mapsResults() {
   $('#results-traffic').text(localStorage.getItem('results-traffic'));
-
   $('#results').text(localStorage.getItem("results"));
+  $('#weather-forecast span').html(localStorage.getItem("weather-description"))
+  // $('.city').html('<h1>' + response.city.name + ' Weather Details</h1>');
+  // $('.weather').text('Weather: ' + response.list[0].weather[0].description);
+  // $('.temp').text('Temp: ' + Math.round(((response.list[0].main.temp - 273.15) * 1.80) + 32) + ' °F'); 
 }
 
+$('#destination-form').on('submit', function (event) {
+  event.preventDefault();
+  //var zipCode = $('departure-input').val();
+  
+});    
+//return false; 
+
+
+// Ben
+// ---------------------------------------------------------------
 
 
 // // By default display the content from localStorage
