@@ -34,8 +34,13 @@
 
         <div class="container" id="where-when">
             <h5>Destination: <span id="designated-destination"></span></h5>
-            <em>This is where the users input regarding destination and arrival time from page 2 will appear</em>
-            <h5 id="weather-response">Desired Arrival Time:</h5>
+            <h5>Desired Departure Time: <span id=weather-response></span></h5>
+            <div>
+                <h5>Travel Time Without Traffic: <span id="results"></span></h5>
+            </div>
+            <div>
+                <h5>Travel Time With Traffic: <span id="results-traffic"></span></h5>
+            </div>
         </div>
         <br>
         <div class="container" id="weather-results">
@@ -69,32 +74,24 @@
                     <button type="submit" class="btn btn-primary" id="add-task">Add Button</button>
                 </div>
             </div>
-
-            <br>
-
+            <hr id="divider">
+            <button type="submit" class="btn btn-primary" id="calculate">Calculate</button>
         </div>
         <br>
-        <button type="submit" class="btn btn-primary" id="calculate">Calculate</button>
+        <!-- <button type="submit" class="btn btn-primary" id="calculate">Calculate</button> -->
 
-        <div class="container" id="results-panel">
-            <h2> Results</h2>
+        <div class="container" id="departure-time">
+            <h2 id="must-leave-by"> You have to leave the house by: <span id="final-departure"></span></h2>
             <div>
-                <h3>Results with no traffic: <span id="results"></span></h3>
             </div>
-            <div>
-                <h3>Results with traffic: <span id="results-traffic"></span></h3>
-            </div>
-        </div>
-        <br><br>
+            <script src="../assets/javascript/app.js"></script>
+            <script src="../assets/javascript/destination-info.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    mapsResults();
+                });
+            </script>
 
-    </div>
-    <script src="../assets/javascript/app.js"></script>
-    <script src="../assets/javascript/destination-info.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            mapsResults();
-        });
-    </script>
 
 </body>
 
