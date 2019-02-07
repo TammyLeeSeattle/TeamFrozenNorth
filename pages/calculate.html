@@ -77,17 +77,21 @@
         <div class="container" id="results-panel">
             <h2> Results</h2>
             <div>
-                <h3 id="results">Results with no traffic:</h3>
+                <h3>Results with no traffic: <span id="results"></span></h3>
             </div>
             <div>
-                <h3 id="results-traffic">Results with traffic:</h3>
+                <h3>Results with traffic: <span id="results-traffic"></span></h3>
             </div>
         </div>
         <br><br>
 
     </div>
-    <script src="../assets/js/app.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc1vjFKMeHn1ZPLk6eetWaFFKg2LQWgHk&callback=setupDirections&libraries=places"></script>
+    <script src="../assets/javascript/app.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            mapsResults();
+        });
+    </script>
 
 </body>
 
