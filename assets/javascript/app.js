@@ -3,14 +3,24 @@
 var outputDiv;
 var outputDivTraffic;
 
-function getWeather(zipcode) {
-	// Make Ajax calls and update page
-  console.log("Making ajax call with " + zipcode);
-}
+  // TAMMY: config file to initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDVg7BCMfMiHyKtxl_3uQ4oOQ1g7yO8cIo",
+    authDomain: "rise-and-shine-766d0.firebaseapp.com",
+    databaseURL: "https://rise-and-shine-766d0.firebaseio.com",
+    projectId: "rise-and-shine-766d0",
+    storageBucket: "rise-and-shine-766d0.appspot.com",
+    messagingSenderId: "1074221528291"
+  };
 
+  // TAMMY: call firebase
+  firebase.initializeApp(config);
 
-
-
+  // call weather function
+  function getWeather(zipcode) {
+    // Make Ajax calls and update page
+    console.log("Making ajax call with " + zipcode);
+  }
 
 
 // Google API (Sonja)
@@ -18,13 +28,9 @@ function getWeather(zipcode) {
 
 $(document).ready(function() {
 
-   
-    
   //set up ability to pick time from a list of options
   $("#departure-input").timepicker(); 
 
-  
-  
   var input = document.getElementById('origin');
 
 
@@ -38,12 +44,7 @@ $("#submit").on("click", function(){
           var departureTime = $("#departure-input").val().trim();
           console.log("Getting distances from " + origin + " to " + destination);
           
-          getDistances(origin, destination)
-
-          
-        
-        
-          
+          getDistances(origin, destination)    
           
     });
 });
@@ -84,7 +85,6 @@ $("#submit").on("click", function(){
             var outputDivTraffic = "";
             var outputDiv = "";            
 
-          
         
             //check for zipcode and save to a variable
             var addressArr = destinationList.toString().split(',');
@@ -99,7 +99,6 @@ $("#submit").on("click", function(){
                 
                 outputDiv += results[j].duration.text;
                 outputDivTraffic += results[j].duration_in_traffic.text;
-                
                  
               }
             }
@@ -119,15 +118,6 @@ $("#submit").on("click", function(){
           
           $('#results').text(localStorage.getItem("results"));
           }
-
-
-
-
-// Weather API (Julie)
-// ---------------------------------------------------------------
-
-
-
 
 
 
