@@ -35,9 +35,9 @@
         <div class="container" id="where-when">
             <h5>Destination: <span id="designated-destination"></span></h5>
             <h5>Desired Departure Time: <span id=weather-response></span></h5>
-            <div>
+            <!-- <div>
                 <h5>Travel Time Without Traffic: <span id="results"></span></h5>
-            </div>
+            </div> -->
             <div>
                 <h5>Travel Time With Traffic: <span id="results-traffic"></span></h5>
             </div>
@@ -45,7 +45,12 @@
         <br>
         <div class="container" id="weather-results">
             <h5 id="weather-forecast">Forecasted Weather: <span></span></h5>
-            <div id="radio">
+            <div id="more-time">
+                <h5 id="more-minutes">How many minutes will this weather add to your travel time?</h5>
+                <input type="number" class="form-control" id="how-much" placeholder="How Much More Time in Minutes">
+            </div>
+
+            <!-- <div id="radio">
                 <label for="yes_no_radio">
                     <p>Will your commute require more time due to weather?</p>
                 </label>
@@ -59,31 +64,31 @@
             </div>
             <div id="more-time">
                 <input type="number" class="form-control" id="how-much" placeholder="How Much More Time in Minutes">
-            </div>
-            <br>
+            </div> -->
             <h5>Have stuff to do before you need to leave? Let's make a list of those activities and figure out
                 how long each will take you!</h5>
             <span><input type="text" class="form-control" id="taskName" placeholder="Activity">
-            <input type="number" class="form-control" id="taskDuration" placeholder="Duration of Activity (in minutes)"></span>
-                    <button type="submit" class="btn btn-primary" id="addTask">Add Activity</button>
-                <div class="alertList" id="default-tasks"></div>
-            </div>
-            <hr id="divider">
+                <input type="number" class="form-control" id="taskDuration" placeholder="Duration of Activity (in minutes)"></span>
+            <button type="submit" class="btn btn-primary" id="addTask">Add Activity</button>
+            <div class="alertList" id="default-tasks"></div>
+            <hr>
             <button type="submit" class="btn btn-primary" id="calculate">Calculate</button>
         </div>
-        <br>
-        <div class="container" id="departure-time">
-            <h2 id="must-leave-by"> You have to leave the house by: <span id="final-departure"></span></h2>
-            <div>
-            </div>
-    <script src="../assets/javascript/app.js"></script>
-    <script src="../assets/javascript/destination-info.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
+        <!-- <hr id="divider"> -->
+        
+    </div>
+    <div class="container" id="departure-time">
+        <h2 id="must-leave-by"> You have to leave the house by: <span id="final-departure"></span></h2>
+        <div>
+        </div>
+        <script src="../assets/javascript/app.js"></script>
+        <script src="../assets/javascript/destination-info.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
                 mapsResults();
-        });
-    </script>
-    
+            });
+        </script>
+
 </body>
 
 </html>

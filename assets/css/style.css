@@ -195,10 +195,15 @@ p {
 
 }
 
-/* hr {
+#how-much {
+    width: 50%;
+    margin-bottom: 15px;
+}
+
+hr {
     border: 5px solid silver;
     border-radius: 3px;
-} */
+}
 
 
 .jumbotron3 {
@@ -216,6 +221,17 @@ p {
     padding-right: 20px;
     text-align: right;
 }
+
+#more-minutes {
+    padding-top: 5px;
+    width: 50%;
+}
+
+#more-time {
+    display: flex;
+    flex-direction: row;
+}
+
 
 
 #radio {
@@ -243,7 +259,7 @@ p {
 
 #taskDuration {
     margin-bottom: 10px;
-    width: 40%;
+    width: 48%;
 
 }
 
@@ -252,9 +268,10 @@ p {
     float: left;
     margin-bottom: 10px;
     margin-right: 15px;
-    width: 40%;
-   
+    width: 48%;
 }
+
+
 #weather-results {
     background-color: rgb(41, 55, 69, 0.75);
     border: 2px solid whitesmoke;
