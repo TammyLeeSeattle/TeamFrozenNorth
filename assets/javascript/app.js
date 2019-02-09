@@ -28,7 +28,7 @@ var outputDivTraffic;
         dataType: 'json',
         success: function(response){
             console.log(response); 
-            localStorage.setItem('weather-description', response.list[0].weather[0].description);
+            localStorage.setItem('weather-description', response.list[0].weather[0].main);
             callback();
         }
     });
