@@ -126,21 +126,31 @@ function getDistances(origin1, destinationA, cb) {
 // ---------------------------------------------------------------
 
 
+var string = (localStorage.getItem("weather-description"));
+var firstLetter = string.charAt(0);
+var uppercaseFirstLetter = string.charAt(0).toUpperCase();
+var stringWithoutFirstLetter = string.slice(1)
+
+function jsUcfirst(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function mapsResults() {
   $('#results-traffic').text(localStorage.getItem('results-traffic'));
   $('#results').text(localStorage.getItem("results"));
-  $('#weather-forecast span').html(localStorage.getItem("weather-description"))
+  $('#weather-forecast span').html(jsUcfirst(localStorage.getItem("weather-description")));
+  var weatherIcon = getWeatherIcon(localStorage.getItem("weather-description"));
+  $('#weather-forecast i').addClass(weatherIcon);
+  // $('.temp').text('Temp: ' + Math.round(((response.list[0].main.temp - 273.15) * 1.80) + 32) + ' °F');
   // $('.city').html('<h1>' + response.city.name + ' Weather Details</h1>');
   // $('.weather').text('Weather: ' + response.list[0].weather[0].description);
-  // $('.temp').text('Temp: ' + Math.round(((response.list[0].main.temp - 273.15) * 1.80) + 32) + ' °F'); 
-}
+}   
 
-$('#destination-form').on('submit', function (event) {
-  event.preventDefault();
-  //var zipCode = $('departure-input').val();
-  
-});    
-//return false; 
+// take the description and use it to find in the weather icons to display the icon
+
+function getWeatherIcon(felix){
+  return 'wi-' + felix.toLowerCase();
+ }
 
 
 // Ben
