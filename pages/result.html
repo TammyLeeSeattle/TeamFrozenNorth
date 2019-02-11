@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA Compatible" content="ie-edge">
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <!-- Timepicker Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <title>Rise & Shine</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron4" id="jumbotron">
+            <h1>Rise & Shine</h1>
+        </div>
+    </div>
+
+    <!-- Displays results of Google API query and user inputs about weather and life tasks -- Tammy -->
+    <div class="container" id="where-when">
+
+        <div class="row">
+            <h2>Let's recap!</h2>
+        </div>
+
+        <div class="row">
+            <!-- This pulls from Google API call -- Tammy -->
+            <div class="col-sm">Your desired departure time is: </div>
+            <div class="col-sm"><span id="weather-response"></span></div>
+        </div>
+
+        <div class="row">
+            <!-- This pulls from Google API call -- Tammy -->
+            <div class="col-sm">Travel Time With Traffic: </div>
+            <div class="col-sm"><span id="results-traffic"></span></div>
+        </div>
+
+        <div class="row">
+            <!-- This pulls from user inputs that are stored in firebase -->
+            <div class="col-sm">Extra time due to weather and activities: </div>
+            <div class="col-sm"><span id="extraTimeNeeded"></span> min(s)</div>
+        </div>
+
+        </table>
+    </div>
+
+    <br />
+
+    <!-- Display final calculated predicted arrival time -- Tammy -->
+    <div class="container" id="where-when">
+        <div class="row">
+            <div class="col-sm"><h4>You will arrive by:</h4></div>
+            <div class="col-sm"><span id="anticipatedArrivalTime"></span></div>
+        </div>
+    </div>
+
+    <br />
+
+    <!-- Allow user to try a different departure time -- Tammy -->
+    <div class="container" id="where-when">
+        <h5>Is that too early or too late?</h5>
+        <p>Want to try a different departure time? Want to adjust your pre-departure tasks?</p>
+        <button><a href="create.html">Try Again</a></button>
+    </div>
+
+
+    <!-- Google Maps API  -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc1vjFKMeHn1ZPLk6eetWaFFKg2LQWgHk&callback=setupDirections&libraries=places"></script>
+    
+    <!-- Moment JS library -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    
+    <!-- Our team's logic file -->
+    <script src="../assets/javascript/app.js"></script>
+    <script src="../assets/javascript/destination-info.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            mapsResults();
+        });
+    </script>
+</body>
+
+</html>
