@@ -62,10 +62,13 @@ $(document).ready(function () {
     var departureTime = $("#departure-input").val().trim();
     console.log("Getting distances from " + origin + " to " + destination);
 
-    if (origin) {
-      getDistances(origin, destination) 
-    }
+    // Validate origin, destination adn departureTime values
+    if(origin.length ===0 || destination.length ===0 || departureTime.length ===0){
     
+      return;
+    }
+
+    getDistances(origin, destination);
   });
 });
 
