@@ -170,6 +170,18 @@ p {
 }
 
 /* CALCULATE.HTML */
+#add-activity {
+    background-color: rgb(41, 55, 69, 0.75);
+    border: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 12px 20px;
+    text-align: left;
+}
+
 #addTask:hover {
     background: #023269;
     border: 1px solid rgb(118, 151, 248);
