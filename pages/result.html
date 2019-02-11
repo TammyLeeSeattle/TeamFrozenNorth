@@ -25,7 +25,6 @@
 </head>
 
 <body>
-
     <div class="container">
         <div class="jumbotron4" id="jumbotron">
             <h1>Rise & Shine</h1>
@@ -34,33 +33,25 @@
 
     <!-- Displays results of Google API query and user inputs about weather and life tasks -- Tammy -->
     <div class="container" id="results-info">
-
         <div class="row">
             <h2 id="results-header">Let's recap!</h2>
         </div>
-
         <div class="row">
             <!-- This pulls from Google API call -- Tammy -->
             <div class="col-sm">Your desired departure time is: </div>
             <div class="col-sm"><span id="weather-response"></span></div>
         </div>
-
         <div class="row">
             <!-- This pulls from Google API call -- Tammy -->
             <div class="col-sm">Travel Time With Traffic: </div>
             <div class="col-sm"><span id="results-traffic"></span></div>
         </div>
-
         <div class="row">
             <!-- This pulls from user inputs that are stored in firebase -->
             <div class="col-sm">Extra time due to weather and activities: </div>
             <div class="col-sm"><span id="extraTimeNeeded"></span> min(s)</div>
         </div>
-
-        </table>
     </div>
-
-    <br />
 
     <!-- Display final calculated predicted arrival time -- Tammy -->
     <div class="container" id="where-when">
@@ -70,27 +61,20 @@
         </div>
     </div>
 
-    <br />
-
     <!-- Allow user to try a different departure time -- Tammy -->
     <div class="container" id="retry">
         <h5>Is that too early or too late?</h5>
-        <p>Want to try a different departure time? Want to adjust your pre-departure tasks?</p>
+            <p>Want to try a different departure time? Want to adjust your pre-departure tasks?</p>
         <button id="try-again"><a href="create.html">Try Again</a></button>
     </div>
 
-
     <!-- Google Maps API  -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc1vjFKMeHn1ZPLk6eetWaFFKg2LQWgHk&callback=setupDirections&libraries=places"></script>
-    
     <!-- Moment JS library -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-    
     <!-- Our team's logic file -->
     <script src="../assets/javascript/app.js"></script>
     <script src="../assets/javascript/destination-info.js"></script>
-
-
     <script type="text/javascript">
         $(document).ready(function () {
             mapsResults();

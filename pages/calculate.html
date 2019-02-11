@@ -36,35 +36,28 @@
         <!-- This is for text that instructs the user on how to navigate through the pages. -- Tammy -->
         <div class="container">
             <div id="directions3">
-                <h4>Next:</h4>
                 <h6>What are some things that will affect your departure?</h6>
             </div>
         </div>
 
-
-        <br>
         <div class="container" id="weather-results">
             <h5 id="weather-forecast">Forecasted Weather: <span></span><i class="wi"></i></h5>
             <div id="more-time">
                 <h5 id="more-minutes">How many minutes will this weather add to your travel time?</h5>
-
                 <!-- The id "how-much" will convert the user input to a number, which will be stored in firebase -- Tammy -->
                 <input type="number" class="form-control" id="how-much" placeholder="How Much More Time in Minutes">
             </div>
         </div>
 
-        <br />
-
         <div class="container" id="weather-results">
-            <h5>Have stuff to do before you need to leave? Let's make a list of those activities and figure out
-                how long each will take you!</h5>
-            <span><input type="text" class="form-control" id="taskName" placeholder="Activity">
-                <input type="number" class="form-control" id="taskDuration" placeholder="Duration of Activity (in minutes)"></span>
+            <h5>Have stuff to do before you need to leave? Let's make a list of those activities and figure out how long each will take you!</h5>
+                <span>
+                    <input type="text" class="form-control" id="taskName" placeholder="Activity">
+                    <input type="number" class="form-control" id="taskDuration" placeholder="Duration of Activity (in minutes)">
+                </span>
             <button type="submit" class="btn btn-primary" id="addTask">Add Activity</button>
             <div class="alertList" id="alert-activities"></div>
         </div>
-
-        <br />
 
         <div class="container" id="predicted-arrival">
             <h5>Show me my predicted arrival time!</h5>
@@ -73,28 +66,18 @@
 
     </div>
 
-    <!-- <div class="container" id="departure-time">
-        <h2 id="must-leave-by"> You have to leave the house by: <span id="final-departure"></span></h2>
-        <div>
-    </div> -->
-
     <!-- Google Maps API  -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc1vjFKMeHn1ZPLk6eetWaFFKg2LQWgHk&callback=setupDirections&libraries=places"></script>
-    
     <!-- Moment JS library -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-    
     <!-- Our team's logic file -->
     <script src="../assets/javascript/app.js"></script>
     <script src="../assets/javascript/destination-info.js"></script>
-
-
     <script type="text/javascript">
         $(document).ready(function () {
             mapsResults();
         });
     </script>
-
 
 </body>
 
