@@ -21,6 +21,9 @@ function getWeather(zipcode) {
   // TAMMY: call firebase
   firebase.initializeApp(config);
 
+  // TAMMY: global variable to store all data inputs that engage with firebase
+  var lifeTasksData = firebase.database();
+
   // call weather function
   function getWeather(zipcode, callback) {
     // Make Ajax calls and update page
@@ -52,14 +55,17 @@ $(document).ready(function () {
   $("#submit").on("click", function () {
     event.preventDefault();
 
-    //storing and retreiving new directions data
+    //storing and retrieving new directions data
     var origin = $("#origin-input").val().trim();
     var destination = $("#destination-input").val().trim();
 
     var departureTime = $("#departure-input").val().trim();
     console.log("Getting distances from " + origin + " to " + destination);
 
-    getDistances(origin, destination)
+    if (origin) {
+      getDistances(origin, destination) 
+    }
+    
   });
 });
 
@@ -168,8 +174,11 @@ $("#designated-destination").text(localStorage.getItem("destination"));
   var originInput = document.getElementById('origin-input');
   var destinationInput = document.getElementById('destination-input');
   //var travelModeArr =  //this needs to be a picker from a list of options
-  autocomplete = new google.maps.places.Autocomplete(originInput, {});
-  autocomplete = new google.maps.places.Autocomplete(destinationInput, {});
+  if (originInput) {
+    autocomplete = new google.maps.places.Autocomplete(originInput, {});
+    autocomplete = new google.maps.places.Autocomplete(destinationInput, {});
+  }
+;
 
 function getDistances(origin1, destinationA, cb) {
   service.getDistanceMatrix({
@@ -216,7 +225,6 @@ function getDistances(origin1, destinationA, cb) {
 // Weather API Julie
 // ---------------------------------------------------------------
 
-
 var string = (localStorage.getItem("weather-description"));
 var firstLetter = string.charAt(0);
 var uppercaseFirstLetter = string.charAt(0).toUpperCase();
@@ -248,9 +256,90 @@ function getWeatherIcon(felix){
 // $("#designated-destination").text(localStorage.getItem("destination"));
 
 
-// Life Tasks user input (Tammy)
+// TAMMY: Store user inputs from calculate.html in firebased
 // ---------------------------------------------------------------
 
+// send data to firebase on click of submit by collecting inputs from each field and storing it
+$("#addTask ").on("click", function () {
+  
+  // on user click of "Add Activity", create a new task item that will be stored in firebase
+  var newTask = {
+    name: $("#taskName").val(),
+    taskTime: $("#taskDuration").val()
+  }
 
-// Calculate wake up time (Tammy)
-// ---------------------------------------------------------------
+  // add user input and commit to firebase variable
+  lifeTasksData.ref().push(newTask);
+
+  // update HTML with the latest user input
+  $("#taskName").val("");
+  $("#taskDuration").val("");
+
+  // prevents reload of page based on submit button
+  return false;
+})
+
+// start 'time counter' for number of minutes associated with user inputs (weather + activities)
+var taskMinutes = 0;
+
+// calculate anticipated arrival time by adding "extra time" (weather + activites) to traffic time to desired departure time
+var hardCodedDepartDateString = "2019-02-14T"; // this is the hard-coded date. THIS WILL NEED TO CHANGE IF WE UN-HARDCODE THE DATE OF DEPARTURE.
+
+var desiredDepartureTime = localStorage.getItem("departure");
+
+// use MomentJS to add and format some time to show user info on index.html. Use 'replace' to remove the 'min' notation from "results-traffic". SHOULD UPDATE THIS ID IN THE FUTURE TO AVOID USE OF 'REPLACE' HERE.
+var anticipatedArrivalTime = moment(hardCodedDepartDateString + desiredDepartureTime).add(localStorage.getItem('results-traffic').replace(' mins', ''), 'minutes');
+
+    // //testing and debugging -- Tammy
+    // console.log(localStorage.getItem("departure"));
+    // console.log(anticipatedArrivalTime);
+
+// retrieve data from firebase
+lifeTasksData.ref().on("child_added", function (snapshot) {
+  var name = snapshot.val().name;
+  var taskTime = snapshot.val().taskTime;
+
+      // // testing and debugging -- Tammy
+      // console.log(name);
+      // console.log(taskTime);
+
+  // create a running sum of minutes ("taskMinutes") and as user adds activities/weather, then add "taskTime" to the sum of minutes
+  taskMinutes =parseInt(taskMinutes) + parseInt(taskTime);
+
+      // // testing and debugging -- Tammy
+      // console.log(taskMinutes);
+
+      // allowing for the final "anticipatedArrival" to be relevant outside of this event listener function
+      anticipatedArrivalTime = anticipatedArrivalTime.add(parseInt(taskTime), 'minutes');
+
+      // update DOM for "anticipated arrival time"
+      $("#anticipatedArrivalTime").text(anticipatedArrivalTime.format('MMMM DD - LT'));
+
+  // update HTML on calculate.HTML to show data retrieved from firebase to make the activity list dynamically visible
+  var div = $('<div />')
+    .attr('class', 'task alert alert-dark')
+    .attr('data-time', taskTime)
+    .text(name);
+
+  // prevent 'weather' task from showing in the activity item list; otherwise, user sees an activity called "weather" in their activity list. Show all other user activities on the page.  
+  if (name !== 'weather') {
+      $("#alert-activities").append(div);
+  }
+
+  // update DOM to show sum of weather + activities time
+  $("#extraTimeNeeded").text(taskMinutes);
+});
+
+
+// collect all user input values, store in firebase, then retrieve the minutes from weather + duration from firebase, then redirect to /result.html on click of "calculate"
+$('#calculate').on("click", function () {
+
+  // convert user input of additional time due to weather to a number
+  var weatherVariable = {
+      name: "weather",
+      taskTime: $("#how-much").val()
+    }
+  
+    // add user input for additional weather time and commit to firebase
+    lifeTasksData.ref().push(weatherVariable);
+})

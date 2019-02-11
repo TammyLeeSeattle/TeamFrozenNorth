@@ -90,6 +90,22 @@ p {
     margin-top: 20px;
 }
 
+/* This is for the text just below the banner that instructs the user how to navigate through the pages. -- Tammy */
+.jumbotrontitle {
+    background-color: rgb(134, 214, 30);
+    background-size: cover;
+    background-position: 0 30%;
+    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
+    font-family: 'Righteous', cursive;
+    height: 25%;
+    margin-top: 20px;
+    padding: 10px 20px 10px 20px;
+    text-align: left;
+}
+
 /* CREATE.HTML - styling specific create.html*/
 
 #input-info {
@@ -280,6 +296,31 @@ hr {
     text-align: left;
 }
 
+
+
+.wi {
+    padding-left: 13px;
+}
+
+
+/* RESULT.HTML */
+
+.jumbotron4 {
+    background-image: url(../images/seattleMorning4.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 0 40%;
+    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
+    font-family: 'Righteous', cursive;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-right: 20px;
+    text-align: right;
+}
+
 #where-when {
     background-color: rgb(41, 55, 69, 0.75);
     border-top: 2px solid whitesmoke;
@@ -292,6 +333,3 @@ hr {
     width: 100%;
 }
 
-.wi {
-    padding-left: 13px;
-}
