@@ -1,6 +1,7 @@
 Deployed at: https://tammyleeseattle.github.io/TeamFrozenNorth/pages/index_1.html
 
 * What problem does your app focus on>
+
 For busy folks who SUPER hate getting up early only to have that weird 15 minutes of time because they got up too early (and realize they could've slept in 15 minutes more)... then, let this program calculate your life variables, weather variables, a buffer zone, and anticipated traffic times to decide when to wake you up!
 Alternatively, maybe you want to maximize your nap time... this app should be able to figure out your maximum nap time.
 
@@ -22,9 +23,6 @@ Firebase
 Moment.js
 
 
-* Show the app running and solving the problem that began your story. 
-    (insert picture of landing page)
-
 
 * Features to be added in future releases>
 - Add a local alarm based on the results of the calculation
@@ -39,8 +37,12 @@ Moment.js
 ------------------------------------------
 
 Contributors >
+
 SonjaRasmussen
+
 benvaagen
+
 TammyLeeSeattle
+
 JulieMathews
 
