@@ -15,80 +15,66 @@
         crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Weather Icons CSS -->
+    <link rel="stylesheet" href="../assets/css/weather-icons.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
     <!-- Timepicker Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
-
-    <title>Rise & Shine: Final Calculations</title>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <title>Rise & Shine</title>
 </head>
 
 <body>
 
     <div class="container">
         <div class="jumbotron3">
-            <h1>Rise & Shine:</h1>
-            <h4>Additional Info</h4>
+            <h1>Rise & Shine</h1>
         </div>
 
-        <div class="container" id="where-when">
-            <h5 id="designated-destination">Destination:</h5>
-            <em>This is where the users input regarding destination and arrival time from page 2 will appear</em>
-            <h5 id="weather-response">Desired Arrival Time:</h5>
-        </div>
-        <br>
-        <div class="container" id="weather-results">
-            <h5 id="weather-forecast">Forecasted Weather:</h5>
-            <div id="radio">
-                <label for="yes_no_radio">
-                    <p>Will your commute require more time due to weather?</p>
-                </label>
-                <p>
-                    <input type="radio" name="yes_no" checked>Yes</input>
-                </p>
-                <p>
-                    <input type="radio" name="yes_no">No</input>
-                </p>
+        <!-- This is for text that instructs the user on how to navigate through the pages. -- Tammy -->
+        <div class="container">
+            <div id="directions3">
+                <h6>What are some things that will affect your departure?</h6>
             </div>
+        </div>
+
+        <div class="container" id="weather-results">
+            <h5 id="weather-forecast">Forecasted Weather: <span></span><i class="wi"></i></h5>
             <div id="more-time">
+                <h5 id="more-minutes">How many minutes will this weather add to your travel time?</h5>
+                <!-- The id "how-much" will convert the user input to a number, which will be stored in firebase -- Tammy -->
                 <input type="number" class="form-control" id="how-much" placeholder="How Much More Time in Minutes">
             </div>
-            <br>
-            <h5>Here are some common tasks that people do in the morning. Click the task to set aside time for that
-                task.</h5>
-            <div class="container" id="default-tasks">
-                <br>
-                <h6><em>This is where the default task buttons will appear.</em></h6>
-                <br><br>
-                <div id="your-tasks">
-                    <h5>If you'd like to add your own task, input that information here:</h5>
-                    <input type="text" class="form-control" id="task-input" placeholder="Add a task button">
-                    <br>
-                    <button type="submit" class="btn btn-primary" id="add-task">Add Button</button>
-                </div>
-            </div>
-
-            <br>
-
         </div>
-        <br>
-        <button type="submit" class="btn btn-primary" id="calculate">Calculate</button>
 
-        <div class="container" id="results-panel">
-            <h2> Results</h2>
-            <div>
-                <h3>Results with no traffic: <span id="results"></span></h3>
-            </div>
-            <div>
-                <h3>Results with traffic: <span id="results-traffic"></span></h3>
-            </div>
+        <div class="container" id="add-activity">
+            <h5>Have stuff to do before you need to leave? Let's make a list of those activities and figure out how long each will take you!</h5>
+                <span>
+                    <input type="text" class="form-control" id="taskName" placeholder="Activity">
+                    <input type="number" class="form-control" id="taskDuration" placeholder="Duration of Activity (in minutes)">
+                </span>
+            <button type="submit" class="btn btn-primary" id="addTask">Add Activity</button>
+            <div class="alertList" id="alert-activities"></div>
         </div>
-        <br><br>
+
+        <div class="container" id="predicted-arrival">
+            <h5>Show me my predicted arrival time!</h5>
+            <button id="calculate" type="get"><a href="result.html">Calculate</a></button>
+        </div>
 
     </div>
+
+    <!-- Google Maps API  -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc1vjFKMeHn1ZPLk6eetWaFFKg2LQWgHk&callback=setupDirections&libraries=places"></script>
+    <!-- Moment JS library -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <!-- Our team's logic file -->
     <script src="../assets/javascript/app.js"></script>
+    <script src="../assets/javascript/destination-info.js"></script>
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
             mapsResults();
         });
     </script>

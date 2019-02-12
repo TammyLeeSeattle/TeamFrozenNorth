@@ -1,6 +1,7 @@
 /* GLOBAL STYLINGS */
 body {
     background-color: rgb(12, 16, 21);
+    background-image: url(../images/backgroundimage.jpg)
 }
 
 h1 {
@@ -13,7 +14,9 @@ h1 {
 }
 
 h2 {
-    color: white;
+    color: rgb(220, 20, 60);
+    font-size: 3rem;
+    text-shadow: 0 0 5px white, 0 0 5px white;
 }
 
 h3 {
@@ -34,19 +37,18 @@ h5 {
 h6 {
     color: white;
     text-align: center;
-    
+    padding-top: 5px;
 }
 
 p {
     color: white;
-
+    margin: 0px;
 }
 
 /* INDEX_1.HTML - styling specific to index_1.html*/
-
 #about {
     color: whitesmoke;
-    background-color: rgb(41, 55, 69);
+    background-color: rgb(41, 55, 69, 0.75);
     border: 1px solid whitesmoke;
     border-radius: 10px;
     box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
@@ -62,14 +64,14 @@ p {
 }
 
 #get-started {
-    background-color: gray;
+    background-color: lightskyblue;
     border-radius: 5px;
     color: white;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 15px;
     margin-left: 40%;
     margin-right: 40%;
-    width: 20%;
+    width: 10%;
 }
 
 .jumbotron {
@@ -85,11 +87,44 @@ p {
     margin-top: 20px;
 }
 
+/* This is for the text just below the banner that instructs the user how to navigate through the pages. -- Tammy */
+.jumbotrontitle {
+    background-color: rgb(134, 214, 30);
+    background-size: cover;
+    background-position: 0 30%;
+    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
+    font-family: 'Righteous', cursive;
+    height: 25%;
+    margin-top: 20px;
+    padding: 10px 20px 10px 20px;
+    text-align: left;
+}
+
 /* CREATE.HTML - styling specific create.html*/
+
+#directions2 {
+    color: whitesmoke;
+    background-color: rgb(220, 20, 60, .75);
+    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 12px 20px;    
+    text-align: center;
+    width: 60%;
+}
 
 #input-info {
     color: whitesmoke;
     text-align: center;
+    background-color: rgb(41, 55, 69, 0.75);
     border-top: 2px solid whitesmoke;
     border-bottom: 2px solid whitesmoke;
     border-radius: 10px;
@@ -125,34 +160,44 @@ p {
 }
 
 #submit {
-    background-color: gray;
+    background-color: lightskyblue;
     border-radius: 5px;
     color: white;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 10px;
     margin-left: 40%;
     margin-right: 40%;
-    width: 20%;
+    width: 15%;
 }
 
 /* CALCULATE.HTML */
+#add-activity {
+    background-color: rgb(41, 55, 69, 0.75);
+    border: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 12px 20px;
+    text-align: left;
+}
 
-#add-task:hover {
+#addTask:hover {
     background: #023269;
     border: 1px solid rgb(118, 151, 248);
     color: white;
     cursor: pointer;
 }
 
-#add-task {
-    background-color: gray;
+#addTask {
+    background-color: lightskyblue;
     border-radius: 5px;
     color: white;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 15px;
     margin-left: 40%;
     margin-right: 40%;
-    width: 20%;
+    width: 15%;
 }
 
 #calculate:hover {
@@ -162,66 +207,56 @@ p {
     cursor: pointer;
 }
 
-#calculate {
-    background-color: gray;
+#calculate  {
+    background-color: rgb(220, 20, 60);
     border-radius: 5px;
     color: white;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 15px;
     margin-left: 40%;
     margin-right: 40%;
-    width: 20%;
+    width: 15%;
 }
 
-/* Style The Dropdown Button */
-.dropbtn {
-    background-color: orange;
-    border-radius: 10px;
+#calculate a{
     color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color:#f2b315; 
-    border-radius: 10px;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: orange;}
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn {
-    background-color: orange;
-  }
+}
 
+#departure-time {
+    background-color: rgb(41, 55, 69, 0.75);
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
+    height: 70px;
+}
+
+#directions3 {
+    color: whitesmoke;
+    background-color: rgb(220, 20, 60);
+    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    padding: 12px 20px;    
+    width: 100%;
+}
+
+#how-much {
+    width: 50%;
+    margin-bottom: 15px;
+}
+
+hr {
+    border: 5px solid silver;
+    border-radius: 3px;
+}
 
 
 .jumbotron3 {
@@ -240,37 +275,168 @@ p {
     text-align: right;
 }
 
-#radio{
-    color: white;
+#more-minutes {
+    padding-top: 5px;
+    width: 50%;
+}
+
+#more-time {
+    display: flex;
+    flex-direction: row;
+}
+
+#predicted-arrival {
+    background-color: rgb(41, 55, 69, 0.75);
+    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: center;
 }
 
 #results-panel {
     color: white;
+    background-color: rgba(199, 225, 252, 0.75);
     border: 2px solid whitesmoke;
     border-bottom: 2px solid whitesmoke;
     border-radius: 10px;
     box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
     padding: 12px 20px;
     text-align: center;
+}
 
+#taskDuration {
+    margin-bottom: 10px;
+    width: 48%;
+}
+
+#taskName {
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 15px;
+    width: 48%;
 }
 
 #weather-results {
+    background-color: rgb(41, 55, 69, 0.75);
     border: 2px solid whitesmoke;
     border-bottom: 2px solid whitesmoke;
     box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
     border-radius: 10px;
+    margin-top: 10px;
     padding: 12px 20px;
     text-align: left;
 }
 
-#where-when {
+.wi {
+    padding-left: 13px;
+}
+
+/* RESULT.HTML */
+#alert-activities {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    font-weight: bolder;
+  }
+
+  #anticipatedArrivalTime {
+      margin-top: 50px !important;
+  }
+
+.jumbotron4 {
+    background-image: url(../images/seattleMorning4.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 0 40%;
+    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
+    font-family: 'Righteous', cursive;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-right: 20px;
+    text-align: right;
+}
+
+#results-info {
+    background-color: rgb(41, 55, 69, 0.75);
     border-top: 2px solid whitesmoke;
     border-bottom: 2px solid whitesmoke;
     box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
     border-radius: 10px;
     color: whitesmoke;
     margin: 0 auto;
-    padding: 12px 20px;
-    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 50%;
+}
+
+#results-header {
+    margin: 0 auto;
+}
+
+#retry {
+    color: whitesmoke;
+    background-color: rgb(220, 20, 60);
+    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 12px 20px;    
+    text-align: center;
+    width: 50%;
+}
+
+.task {
+    background-color: #023269;
+    border: 1px solid rgb(118, 151, 248);
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    margin: 5px;
+    width: 30%;
+}
+
+#try-again:hover {
+    background: #023269;
+    border: 1px solid rgb(118, 151, 248);
+    color: white;
+    cursor: pointer;
+}
+
+#try-again {
+    background-color: lightskyblue;
+    border-radius: 5px;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-left: 40%;
+    margin-right: 40%;
+    width: 20%;
+}
+
+#where-when {
+    background-color: rgb(41, 55, 69, 0.75);
+    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    box-shadow: 1px 1px 2px whitesmoke, 0 0 25px lightgray, 0 0 5px gray;
+    border-radius: 10px;
+    color: whitesmoke;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 50%;
 }
